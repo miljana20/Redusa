@@ -1,2 +1,2 @@
-# Redu-a
+# Redusa
 Planinarsko društvo
