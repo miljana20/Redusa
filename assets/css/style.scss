@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+$white:#ffffff;
+$black:#000000;
+$green:#0d3b23;
+$orange:#ffe07a;
+#ucitavanje{
+    background-color: $green;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    z-index: 2;
+    .logo-u{
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: $white;
+        .dio{
+            position: relative;
+            display: inline-block;
+            bottom: -20px;
+            opacity: 0;
+            &:first-of-type{
+                color: $orange;
+            }
+            &.active{
+                bottom: 0px;
+                opacity: 1;
+                transition: ease-in-out 0.5s;
+            }
+            &.fade{
+                bottom: 150px;
+                opacity: 0;
+                transition: ease-in-out 0.5s;
+            }
+        }
+    }
+}
+a{
+    text-decoration: none;
+    transition: 2s;
+    &:hover{
+        transition: 1s;
+        color: $green;
+    }
+}
+ul{
+    list-style-type: none;
+}
+header{
+    background-color: $green;
+}
+.logo h1{
+    color: $white;
+    &::first-letter{
+        color: $orange;
+    }
+}
+h2{
+    font-size: 20px;
+    font-weight: 600;
+    color: $orange;
+    margin: 0px;
+    text-align: center;
+}
+h4{
+    font-size: 15px;
+    font-weight: 700;
+}
+.slogan{
+    color: $green;
+    font-size: 35px;
+    font-weight: 400;
+    margin: 0px;
+    text-align: center;
+}
+.b-color{
+    color: $orange;
+}
+.d-color{
+    color: $green;
+}
+.card{
+    border-bottom: 3px solid $orange ;
+    box-shadow: 0px 0px 10px #00000022;
+}
+.dugme{
+    padding: 10px;
+    border: 2px solid $orange;
+    color: $orange;
+    font-weight: 600;
+    border-radius: 15px;
+    transition: 1s;
+    &:hover{
+        border:2px solid $white;
+        color: $white;
+        background-color: $orange;
+        transition: 2s;
+    }
+}
+.icon{
+    font-size: 30px;
+    border: 1px solid $orange;
+    padding: 20px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px #00000022;
+}
+#utisci{
+    background-image: url("../img/pejzaz7.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    .dark{
+        background-color: #000000aa;
+        p{
+            color: $white;
+        }
+    }
+}
+.adresa{
+    p{
+        padding: 10px;
+    }
+    i{
+        padding: 10px;
+        font-size: 30px;
+    }
+}
+#galerija .galerija{
+    cursor: pointer;
+    filter: grayscale(40%);
+    transition: 1.5s;
+    &:hover{
+        filter: grayscale(0%);
+        transform: scale(1.1);
+        transition: 1s;
+    }
+}
+.prozor-slike{
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000dd;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    img{
+        max-height: 80vh;
+        max-width: 80vw;
+    }
+}
+.nazad-dugme{
+    display: block;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 30px;
+    color: $white;
+    background-color: $black;
+    position: fixed;
+    top: 48vh;
+    left: 20vw;
+    z-index: 5000;
+}
+.naprijed-dugme{
+    display: block;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 30px;
+    color: $white;
+    background-color: $black;
+    position: fixed;
+    top: 48vh;
+    left: 80vw;
+    z-index: 5000;
+}
+iframe{
+    height: 450px;
+}
+footer{
+    background-color: $green;
+    color: $white;
+    h3{
+        font-size: 25px;
+        &:after {
+            content: "";
+            display: block;
+            position: relative;
+            top: 6px;
+            width: 52px;
+            height: 3px;
+            background-color: $orange;
+        }
+    }
+    ul{
+        padding: 0px;
+        li{
+            a{
+                color: $white;
+                transition: 1.5s;
+                &:hover{
+                    color: $orange;
+                    transition: 1s;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    hr{
+        background-color: $white;
+    }
+    p{
+        font-size: 15px;
+        font-weight: 400;
+    }
+}

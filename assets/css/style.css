@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  word-wrap: break-word;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Spartan', sans-serif;
+}
+
+#ucitavanje {
+  background-color: #0d3b23;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+  z-index: 2;
+}
+
+#ucitavanje .logo-u {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #ffffff;
+}
+
+#ucitavanje .logo-u .dio {
+  position: relative;
+  display: inline-block;
+  bottom: -20px;
+  opacity: 0;
+}
+
+#ucitavanje .logo-u .dio:first-of-type {
+  color: #ffe07a;
+}
+
+#ucitavanje .logo-u .dio.active {
+  bottom: 0px;
+  opacity: 1;
+  -webkit-transition: ease-in-out 0.5s;
+  transition: ease-in-out 0.5s;
+}
+
+#ucitavanje .logo-u .dio.fade {
+  bottom: 150px;
+  opacity: 0;
+  -webkit-transition: ease-in-out 0.5s;
+  transition: ease-in-out 0.5s;
+}
+
+a {
+  text-decoration: none;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+a:hover {
+  -webkit-transition: 1s;
+  transition: 1s;
+  color: #0d3b23;
+}
+
+ul {
+  list-style-type: none;
+}
+
+header {
+  background-color: #0d3b23;
+}
+
+.logo h1 {
+  color: #ffffff;
+}
+
+.logo h1::first-letter {
+  color: #ffe07a;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffe07a;
+  margin: 0px;
+  text-align: center;
+}
+
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.slogan {
+  color: #0d3b23;
+  font-size: 35px;
+  font-weight: 400;
+  margin: 0px;
+  text-align: center;
+}
+
+.b-color {
+  color: #ffe07a;
+}
+
+.d-color {
+  color: #0d3b23;
+}
+
+.card {
+  border-bottom: 3px solid #ffe07a;
+  -webkit-box-shadow: 0px 0px 10px #00000022;
+          box-shadow: 0px 0px 10px #00000022;
+}
+
+.dugme {
+  padding: 10px;
+  border: 2px solid #ffe07a;
+  color: #ffe07a;
+  font-weight: 600;
+  border-radius: 15px;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.dugme:hover {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  background-color: #ffe07a;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+.icon {
+  font-size: 30px;
+  border: 1px solid #ffe07a;
+  padding: 20px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 10px #00000022;
+          box-shadow: 0px 0px 10px #00000022;
+}
+
+#utisci {
+  background-image: url("../img/pejzaz7.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#utisci .dark {
+  background-color: #000000aa;
+}
+
+#utisci .dark p {
+  color: #ffffff;
+}
+
+.adresa p {
+  padding: 10px;
+}
+
+.adresa i {
+  padding: 10px;
+  font-size: 30px;
+}
+
+#galerija .galerija {
+  cursor: pointer;
+  -webkit-filter: grayscale(40%);
+          filter: grayscale(40%);
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+
+#galerija .galerija:hover {
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.prozor-slike {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000dd;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2000;
+}
+
+.prozor-slike img {
+  max-height: 80vh;
+  max-width: 80vw;
+}
+
+.nazad-dugme {
+  display: block;
+  padding: 15px;
+  border-radius: 4px;
+  font-size: 30px;
+  color: #ffffff;
+  background-color: #000000;
+  position: fixed;
+  top: 48vh;
+  left: 20vw;
+  z-index: 5000;
+}
+
+.naprijed-dugme {
+  display: block;
+  padding: 15px;
+  border-radius: 4px;
+  font-size: 30px;
+  color: #ffffff;
+  background-color: #000000;
+  position: fixed;
+  top: 48vh;
+  left: 80vw;
+  z-index: 5000;
+}
+
+iframe {
+  height: 450px;
+}
+
+footer {
+  background-color: #0d3b23;
+  color: #ffffff;
+}
+
+footer h3 {
+  font-size: 25px;
+}
+
+footer h3:after {
+  content: "";
+  display: block;
+  position: relative;
+  top: 6px;
+  width: 52px;
+  height: 3px;
+  background-color: #ffe07a;
+}
+
+footer ul {
+  padding: 0px;
+}
+
+footer ul li a {
+  color: #ffffff;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+
+footer ul li a:hover {
+  color: #ffe07a;
+  -webkit-transition: 1s;
+  transition: 1s;
+  text-decoration: none;
+}
+
+footer hr {
+  background-color: #ffffff;
+}
+
+footer p {
+  font-size: 15px;
+  font-weight: 400;
+}
+/*# sourceMappingURL=style.css.map */
