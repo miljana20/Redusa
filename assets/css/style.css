@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gwendolyn:wght@700&display=swap");
 * {
   margin: 0px;
   padding: 0px;
@@ -26,7 +27,7 @@
           align-items: center;
   -webkit-transition: 1s;
   transition: 1s;
-  z-index: 2;
+  z-index: 2000;
 }
 
 #ucitavanje .logo-u {
@@ -120,6 +121,62 @@ h4 {
   color: #0d3b23;
 }
 
+#nav li {
+  text-transform: uppercase;
+  padding: 0px 5px;
+  padding-top: 12px;
+  font-size: 13px;
+  display: inline-block;
+}
+
+#nav li a:hover {
+  color: #ffffff;
+}
+
+.slajder {
+  position: relative;
+}
+
+.slajder img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.odabir-box .h1 {
+  font-weight: 800;
+}
+
+.odabir-box .p {
+  font-size: 13px;
+}
+
+.odabir-box .odabir {
+  padding: 15px 100px;
+  font-size: 18px;
+  border-bottom: 1px solid #685c5c5e;
+  -webkit-transition: 1s;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.odabir-box .odabir:last-of-type {
+  border-bottom: none;
+}
+
+.odabir-box .odabir:hover {
+  border-left: 6px solid #ffe07a;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: #0d3b23;
+}
+
+.odabir-box .odabir .tekuci-odabir {
+  border-left: 6px solid #ffe07a;
+}
+
 .card {
   border-bottom: 3px solid #ffe07a;
   -webkit-box-shadow: 0px 0px 10px #00000022;
@@ -128,6 +185,7 @@ h4 {
 
 .dugme {
   padding: 10px;
+  background-color: #ffffff;
   border: 2px solid #ffe07a;
   color: #ffe07a;
   font-weight: 600;
@@ -144,6 +202,83 @@ h4 {
   transition: 2s;
 }
 
+#kartica {
+  background-color: #0d3b23;
+  color: #ffffff;
+  width: 75vw;
+  margin: 0px auto;
+  position: fixed;
+  top: -150%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%) scale(1.25);
+          transform: translate(-50%, -50%) scale(1.25);
+  -webkit-transition: top 0ms ease-in-out 200ms,
+ opacity 200ms ease-in-out 0ms,
+ -webkit-transform 20ms ease-in-out 0ms;
+  transition: top 0ms ease-in-out 200ms,
+ opacity 200ms ease-in-out 0ms,
+ -webkit-transform 20ms ease-in-out 0ms;
+  transition: top 0ms ease-in-out 200ms,
+ opacity 200ms ease-in-out 0ms,
+ transform 20ms ease-in-out 0ms;
+  transition: top 0ms ease-in-out 200ms,
+ opacity 200ms ease-in-out 0ms,
+ transform 20ms ease-in-out 0ms,
+ -webkit-transform 20ms ease-in-out 0ms;
+}
+
+#kartica.aktivirana {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  -webkit-transition: top 0ms ease-in-out 0ms,
+ opacity 200ms ease-in-out 0ms,
+ -webkit-transform 20ms ease-in-out 0ms;
+  transition: top 0ms ease-in-out 0ms,
+ opacity 200ms ease-in-out 0ms,
+ -webkit-transform 20ms ease-in-out 0ms;
+  transition: top 0ms ease-in-out 0ms,
+ opacity 200ms ease-in-out 0ms,
+ transform 20ms ease-in-out 0ms;
+  transition: top 0ms ease-in-out 0ms,
+ opacity 200ms ease-in-out 0ms,
+ transform 20ms ease-in-out 0ms,
+ -webkit-transform 20ms ease-in-out 0ms;
+}
+
+#kartica .close-btn {
+  float: right;
+  padding: 5px;
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+#kartica .dugme {
+  border: 2px solid #000000;
+  color: #0d3b23;
+}
+
+#kartica .dugme:hover {
+  color: #ffffff;
+  background-color: #0d3b23;
+  border: 2px solid #ffffff;
+}
+
+#kartica p {
+  font-size: 17px;
+}
+
+#kartica .form-control {
+  border: 2px solid #000000;
+}
+
+#kartica .form-control:focus {
+  color: #0d3b23;
+}
+
 .icon {
   font-size: 30px;
   border: 1px solid #ffe07a;
@@ -151,6 +286,29 @@ h4 {
   border-radius: 50%;
   -webkit-box-shadow: 0px 0px 10px #00000022;
           box-shadow: 0px 0px 10px #00000022;
+}
+
+#statistika {
+  background-color: #0d3b23;
+}
+
+#statistika .slogan {
+  color: #ffffff;
+}
+
+#statistika .box {
+  background-color: #ffffff11;
+}
+
+#statistika .box h4 {
+  font-size: 60px;
+  font-weight: 800;
+  color: #ffffff;
+  padding: 20px 0px;
+}
+
+#statistika .box i {
+  font-size: 30px;
 }
 
 #utisci {
@@ -167,6 +325,23 @@ h4 {
 
 #utisci .dark p {
   color: #ffffff;
+}
+
+#utisci span {
+  overflow: hidden;
+}
+
+#utisci span.ubacen {
+  display: block;
+  font-family: 'Gwendolyn', cursive;
+  font-size: 40px;
+  -webkit-animation: ubacen 2s ease;
+          animation: ubacen 2s ease;
+}
+
+#utisci span.izbacen {
+  -webkit-animation: izbacen 1.5s ease;
+          animation: izbacen 1.5s ease;
 }
 
 .adresa p {
@@ -246,6 +421,20 @@ h4 {
   z-index: 5000;
 }
 
+.form-grupa {
+  padding: 5px 10px;
+}
+
+.form-grupa .form-control {
+  border: 1px solid #ffe07a;
+}
+
+.form-grupa .form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #ffe07a;
+}
+
 iframe {
   height: 450px;
 }
@@ -293,5 +482,49 @@ footer hr {
 footer p {
   font-size: 15px;
   font-weight: 400;
+}
+
+@-webkit-keyframes ubacen {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes ubacen {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes izbacen {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
+@keyframes izbacen {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
 }
 /*# sourceMappingURL=style.css.map */
