@@ -34,6 +34,8 @@ function navigacija(){
 
     const navigacioniMeniMini = document.querySelector('#footer-nav');
 
+    const meniZaMaleRezolucije = document.querySelector('#navigacija-mala')
+
     const imenovanjeNavigacije = [
     'Početna',
     'Odaberi akciju',
@@ -76,7 +78,25 @@ function navigacija(){
         elementListe.append(linkNavigacije);
         navigacioniMeniMini.append(elementListe)
     }
-       
+
+    //Navigacioni meni za manje rezolucije
+    for (let i = 0; i < linkovanjeNavigacije.length; i++) {
+        let elementListe = document.createElement('li');
+        let linkNavigacije = document.createElement('a');
+        let imeNavigacije = document.createTextNode(imenovanjeNavigacije[i]);
+        linkNavigacije.setAttribute('href', linkovanjeNavigacije[i]);
+        linkNavigacije.append(imeNavigacije);
+        elementListe.append(linkNavigacije);
+        meniZaMaleRezolucije.append(elementListe);
+    }
+
+    document.querySelector('#hamburgercic').addEventListener('click', function(){
+        document.querySelector('#navigacija-mala').classList.add('aktiviraj');
+    });
+    
+    document.querySelector('main').addEventListener('click', function(){
+        document.querySelector('#navigacija-mala').classList.remove('aktiviraj');
+    });
 }
 
 // - Galerija -
@@ -89,7 +109,7 @@ if(slikeIzGalerije){
 
         slika.onclick = function() {
 
-            let adresaSlike = document.getElementById("slika1").getAttribute("src");//naći kako učitati bilo koju sliku
+            let adresaSlike = document.getElementById("slika1").getAttribute("src");
             let urlSlike = adresaSlike.split("/img/");
             let noviUrlSlike = urlSlike[1];
 
