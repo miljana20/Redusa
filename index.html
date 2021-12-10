@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--<meta http-equiv="X-UA-Compatible" content="IE=edge"/>-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="author" content="Miljana Nerić, 20/20" />
         <meta name="keywords" content=""/>
         <meta name="description" content=""/>
@@ -16,7 +16,7 @@
         <!-- CSS -->
         <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
     </head>
-    <body>
+    <body onload="navigacija(), statistika(), utisci()">
         <!-- UČITAVANJE STRANICE - POČEZAK -->
         <div id="ucitavanje">
             <div class="logo-u">
@@ -26,16 +26,18 @@
         <!-- UČITAVANJE STRANICE - POČEZAK -->
 
         <!-- POČETAK HEADER-a -->
-        <header id="navigacija" class="p-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-8 col-lg-2 d-flex align-items-center">
+        <header id="navigacija" class="p-2 sticky-top">
+            <div class="container flex-row-reverse">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-8 col-lg-2 d-flex">
                         <div class="logo">
                             <a href="index.html"><h1>Reduša</h1></a>
                         </div>
                     </div>
-                    <div class="col-4 col-lg-10">
-                        <nav id="menu" class="ml-auto d-none d-lg-flex align-items-center"></nav>
+                    <div class="col-4 col-lg-9">
+                        <nav id="nav-str" class="d-none d-lg-flex flex-row-reverse b-color my-auto">
+                            <ul id="nav" ></ul>
+                        </nav>
 						<a href="#" id="mobile-button" class="d-lg-none"><span class="fa fa-bars"></span></a>
                     </div>
                 </div>
@@ -46,21 +48,38 @@
 
         <!-- POČETAK MAIN-a -->
         <main class="mt-5">
+
             <!-- POČETAK SEKCIJE AKCIJE -->
-            <div id="akcije" class="mb-5 mb-5 w-75 mx-auto ">
+            <div id="akcije" class="mb-5 w-75 mx-auto">
                 <h2>Odaberi svoju akciju</h2>
                 <p class="slogan">Koji predio naše regije biste voljeli da posjetite?</p>
                 <p class="mb-5 text-center">Odaberite destinaciju i upustite se u Vašu planinarsku avanturu!</p>
-                <div class="container">
+                <div class="container ">
                     <div class="row">
-                        <div class="col-md-4 mb-4">
-                            <img src="assets/img/pejzaz4.jpg" class="rounded w-100" alt="Pejzaz">
+                        <div class="col-lg-6">
+                            <div class="slajder">
+                                <div class="slajd jahorina">
+                                    <img src="assets/img/pejzaz4.jpg"  class="rounded w-100" alt="Pejzaz"/>
+                                </div>
+                                <div class="slajd devetak">
+                                    <img src="assets/img/pejzaz5.jpg"  class="rounded w-100" alt="Pejzaz"/>
+                                </div>
+                                <div class="slajd cemernica">
+                                    <img src="assets/img/pejzaz3.jpg"  class="rounded w-100" alt="Pejzaz"/>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-4 mb-4">
-                            <img src="assets/img/pejzaz5.jpg" class="rounded w-100" alt="Pejzaz">
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <img src="assets/img/pejzaz3.jpg" class="rounded w-100" alt="Pejzaz">
+                        <div class="col-lg-6">
+                            <div class="p-3 odabir-box">
+                                <p class="h1 b-color mt-4">Planinarite sa nama...
+                                    <ul class="mt-5 text-center">
+                                        <li class="odabir tekuci-odabir b-color" data-filter="jahorina">Jahorinom!</li>
+                                        <li class="odabir b-color" data-filter="devetak">Devetakom!</li>
+                                        <li class="odabir b-color" data-filter="cemernica">Čemernicom!</li>
+                                    </ul>
+                                </p>
+                                <p class="p mt-4">Doživite nezaboravne avanture u sklopu planinarskog društva Reduša</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -68,7 +87,7 @@
             <!-- KRAJ SEKCIJE AKCIJE -->
 
             <!-- POČETAK SEKCIJE AKTUELNO -->
-            <div id="aktuelno" class="mb-5 mb-5 w-75 mx-auto ">
+            <div id="aktuelno" class="mb-5 w-75 mx-auto position-relative">
                 <h2>Aktuelne akcje</h2>
                 <p class="slogan mb-5">Ne propustite akcije koje slijede!</p>
                 <div class="container">
@@ -79,7 +98,7 @@
                                 <div class="card-body text-left p-4">
                                     <h5 class="card-title b-color">Kozara</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#!" class="dugme">Rezerviši mjesto!</a>
+                                    <button id="a" class="dugme">Rezerviši mjesto!</button>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +108,53 @@
                                 <div class="card-body text-left p-4">
                                     <h5 class="card-title b-color">Velika Lelija</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#!" class="dugme">Rezerviši mjesto!</a>
+                                    <button id="b" class="dugme">Rezerviši mjesto!</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 p-3 rounded" id="kartica">
+                            <button class="close-btn"> &times;</button>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-card">
+                                        <form id="kontakt-forma1" name="kontaktForma" method="get" onsubmit="return validacija1()">
+                                            <div class="row">
+                                                <div class="form-grupa col-12">
+                                                    <input type="text" name="ime" class="form-control" id="ime1" placeholder="Ime:..."/>
+                                                    <span clas="ime-error" class="text-danger font-weight-bold"></span>
+                                                </div>
+                                                <div class="form-grupa col-12">
+                                                    <input type="text" name="email" class="form-control" id="email1" placeholder="Email:..."/>
+                                                    <span clas="email-error" class="text-danger font-weight-bold"></span>
+                                                </div>
+                                                <div class="form-grupa col-12">
+                                                    <input type="text" name="broj" class="form-control" id="broj1" placeholder="Broj telefona:..."/>
+                                                    <span clas="broj-error" class="text-danger font-weight-bold"></span>
+                                                </div>
+                                                <div class="form-grupa col-12">
+                                                    <input type="password" name="lozinka" class="form-control" id="lozinka" placeholder="Lozinka:..."/>
+                                                    <span clas="broj-error" class="text-danger font-weight-bold"></span>
+                                                </div>
+                                                <div class="form-grupa col-12">
+                                                    <input type="password" name="lozinkaPotvrda" class="form-control" id="potvrda-lozinke" placeholder="Potvrda lozinke:..."/>
+                                                    <span clas="broj-error" class="text-danger font-weight-bold"></span>
+                                                </div>
+                                                <div class="form-grupa col-12" id="padajuca-lista"></div>
+                                                <div class="col-md-12">
+                                                    <div class="actions text-left">
+                                                        <input type="submit" value="Pošalji" name="posalji" id="posalji1" class="dugme" title="Proslijedite Vašu poruku!" />
+                                                        <span class="potvrda"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="logo mb-5">
+                                        <a href="index.html"><h1>Reduša</h1></a>
+                                    </div>
+                                    <p>Reduše, đurđevače ili đurđevke (tricholoma georgii), jedne su od najcjenjenijih gljiva našeg regiona. Endemska su vrdta i javljaju se samo duž šire obale rijeke Drine. Obično rastu oko Đurđevdana, međutim, zahvaljujući slaboj zimi i visokim temperaturama, reduše se mogu pojaviti i ranije. Jedne su od simbola našeg regiona te su bile pogodne da postanu zaštitni znak našeg planinarskog društva.</p>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +164,7 @@
             <!-- KRAJ SEKCIJE AKTUELNO -->
 
             <!-- POČETAK SEKCIJE MI -->
-            <div id="mi" class="mb-5 mb-5 ">
+            <div id="mi" class="mb-5 ">
                 <h2>Zašto baš sa nama?</h2>
                 <p class="slogan mb-5">Uvijek nezaboravna planinarenja!</p>
                 <div class="container w-75 mx-auto">
@@ -159,15 +224,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid" id="statistika">
+                <!-- POČETAK STATISTIKE -->
+                <div class="w-100 p-5" id="statistika">
                     <h2>Naša statistika</h2>
-                    <p class="slogan mb-5">Brojke govore više od 1000 riječi</p> 
+                    <p class="slogan mb-5">Brojke govore više od 1000 riječi</p>
+                    <div class="row text-center justify-content-between w-100" id="brojke"></div>
                 </div>
+                <!-- KRAJ STATISTIKE -->
             </div>
             <!-- KRAJ SEKCIJE MI -->
 
             <!-- POČETAK SEKCIJE GALERIJA -->
-            <div id="galerija" class="mb-5 mb-5 w-75 mx-auto">
+            <div id="galerija" class="mb-5 w-75 mx-auto">
                 <h2>Galerija Pejzaža</h2>
                 <p class="slogan mb-5">Djelić atmosfere sa destinacija</p>
                 <div class="container">
@@ -198,49 +266,55 @@
             <!-- KRAJ SEKCIJE GALERIJA -->
 
             <!-- POČETAK SEKCIJE UTISCI -->
-            <div id="utisci" class="mb-5 mb-5 w-100">
+            <div id="utisci" class="mb-5 w-100">
                 <div class="dark p-5">
                     <h2>Utisci</h2>
                     <p class="slogan mb-5">Svaka avantura sa nama vam garantuje pregršt uspomena</p>
+                    <div class="container">
+                        <div class="row">
+                            <div class="text-slajder">
+                                <p class="text-slajd text-center"></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- KRAJ SEKCIJE UTISCI -->
 
             <!-- POČETAK SEKCIJE KONTAKT -->
-            <div id="kontakt" class="mb-5 mb-5">
+            <div id="kontakt" class=" mb-5">
                 <h2>Kontakt</h2>
                 <p class="slogan mb-5">Kontaktirajte nas:</p>
                 <div class="container w-75 mx-auto ">	
                     <div class="row align-items-center p-5">				
                         <div class="col-lg-7 col-sm-12 col-xs-12 d-block p-4 p-md-0 mx-auto">
                             <div class="contact">
-                                <form id="contact-form" name="contactForm" method="post">
+                                <form id="kontakt-forma" name="kontaktForma" method="get" onsubmit="return validacija()">
                                     <div class="row">
-                                        <div class="form-group col-md-6">
-                                            <input type="text" name="name" class="form-control" id="first-name" placeholder="Name"/>
-                                            <p class="error-message m-0 primary-color"></p>
-                                            <span class="error-icon icofont-warning primary-color"></span>
+                                        <div class="form-grupa col-md-6">
+                                            <input type="text" name="ime" class="form-control" id="ime" placeholder="Ime:..."/>
+                                            <span clas="ime-error" class="text-danger font-weight-bold"></span>
                                         </div>
-                                        <div class="form-group col-md-6">
-                                            <input type="text" name="email" class="form-control" id="first-email" placeholder="Email"/>
-                                            <p class="error-message m-0 primary-color"></p>
-                                            <span class="error-icon icofont-warning primary-color"></span>
+                                        <div class="form-grupa col-md-6">
+                                            <input type="text" name="email" class="form-control" id="email" placeholder="Email:..."/>
+                                            <span clas="email-error" class="text-danger font-weight-bold"></span>
                                         </div>
-                                        <div class="form-group col-md-12">
-                                            <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject"/>
-                                            <p class="error-message m-0 primary-color"></p>
-                                            <span class="error-icon icofont-warning primary-color"></span>
+                                        <div class="form-grupa col-md-12">
+                                            <input type="text" name="broj" class="form-control" id="broj" placeholder="Broj telefona:..."/>
+                                            <span clas="broj-error" class="text-danger font-weight-bold"></span>
                                         </div>
-                                        <div class="form-group col-md-12">
-                                            <span class="word-count">200</span>
-                                            <textarea rows="6" name="message" class="form-control" id="description" placeholder="Your Message"></textarea>
-                                            <p class="error-message m-0 primary-color"></p>
-                                            <span class="error-icon icofont-warning primary-color"></span>
+                                        <div class="form-grupa col-md-12">
+                                            <input type="text" name="naslov" class="form-control" id="naslov" placeholder="Naslov:..."/>
+                                            <span clas="naslov-error" class="text-danger font-weight-bold"></span>
+                                        </div>
+                                        <div class="form-grupa col-md-12">
+                                            <textarea rows="6" name="poruka" class="form-control" id="poruka" placeholder="Vaša poruka:..."></textarea>
+                                            <span clas="poruka-error" class="text-danger font-weight-bold"></span>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="actions text-left">
-                                                <input type="submit" value="Send message" name="submit" id="submitButton" class="btn btn-lg btn-contact-bg" title="Submit Your Message!" />
-                                                <p class="success-message mt-2 mb-0"><span class="icofont-checked"></span>Your message has been successfully sent!</p>
+                                                <input type="submit" value="Pošalji" name="posalji" id="posalji" class="dugme" title="Proslijedite Vašu poruku!" />
+                                                <span class="potvrda"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -310,8 +384,9 @@
                         </div>
                         <p>Šta ako je savršena avantura samo na klik od vas? Naišli ste na pravo mjesto! Mi ćemo se potruditi da dobijete najbolje usluge, kakve i zaslužujete.</p>
                     </div>
-                    <div id="footer-nav" class="col-12 col-md-4">
+                    <div class="col-12 col-md-4">
                         <h3 class="mb-3">Navigacija:</h3>
+                        <nav><ul id="footer-nav"></ul></nav>
                     </div>
                     <div class="col-12 col-md-4">
                         <h3 class="mb-3">Linkovi:</h3>
@@ -335,8 +410,9 @@
             </div>
         </footer>
         <!-- KRAJ FOOTER-a -->
+        <!-- JQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- JS -->
-        <script type="text/javascript" src="js/main.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/main1.js"></script>
     </body>
 </html>
