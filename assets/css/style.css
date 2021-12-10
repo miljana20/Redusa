@@ -96,6 +96,18 @@ header .hb-box #hamburgercic:hover {
   color: #ffffff;
 }
 
+#nav li {
+  text-transform: uppercase;
+  padding: 0px 5px;
+  padding-top: 12px;
+  font-size: 13px;
+  display: inline-block;
+}
+
+#nav li a:hover {
+  color: #ffffff;
+}
+
 #navigacija-mala {
   position: fixed;
   left: -100vw;
@@ -106,13 +118,13 @@ header .hb-box #hamburgercic:hover {
   width: 100vw;
 }
 
-#navigacija-mala a {
+#navigacija-mala span {
   color: #ffe07a;
   -webkit-transition: 1s;
   transition: 1s;
 }
 
-#navigacija-mala a:hover {
+#navigacija-mala span:hover {
   color: #ffffff;
   -webkit-transition: 1s;
   transition: 1s;
@@ -168,18 +180,6 @@ h4 {
   width: 75%;
 }
 
-#nav li {
-  text-transform: uppercase;
-  padding: 0px 5px;
-  padding-top: 12px;
-  font-size: 13px;
-  display: inline-block;
-}
-
-#nav li a:hover {
-  color: #ffffff;
-}
-
 .slajder {
   margin-bottom: 530px;
 }
@@ -222,10 +222,6 @@ h4 {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   color: #0d3b23;
-}
-
-.odabir-box .odabir .tekuci-odabir {
-  border-left: 6px solid #ffe07a;
 }
 
 .card {
