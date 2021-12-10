@@ -213,68 +213,55 @@ function validacija1(){
     var korisnickoIme = document.getElementById('ime1').value;
     var korisnickiEmail = document.getElementById('email1').value;
     var korisnickiBroj = document.getElementById('broj1').value;
-    var lozinkaKorisnika = document.getElementById('lozinka').value;
-    var potvrdaLozinke = document.getElementById('potvrda-lozinke').value;
+    var lozinkaKorisnika = document.getElementById('lozinka1').value;
+    var potvrdaLozinke = document.getElementById('potvrda-lozinke1').value;
 
     let imeProvjera = /^[A-Za-z. ]{3,30}$/;
-    let emailProvjera = /^[a-z0-9.]{3,}@[a-z]{3,}[.]{1}[a-z.]{2,6}$/ 
-    let brojProvjera = /^[0]{1}[6]{1}[0-9]{9}$/
+    let emailProvjera = /^[a-z0-9.]{3,}@[a-z]{3,}[.]{1}[a-z.]{2,6}$/;
+    let brojProvjera = /^[0]{1}[6]{1}[0-9]{9}$/;
     let lozinkaProvjera = /^(?=.*[0*9])(?=.*[!@#$%&/*])[a-zA-Z0-9!@#$%&/*]{8,16}$/;
 
     if(imeProvjera.test(korisnickoIme)){
-        document.getElementById('ime-error').innerHTML = " "
+        document.getElementById('ime1-error').innerHTML = " ";
+        return false;
     }
     else{
-        document.getElementById('ime-error').innerHTML = "** Neispravno ime!";
-        return false;
+        document.getElementById('ime1-error').innerHTML = "** Neispravno ime!";
     }
     
     if(emailProvjera.test(korisnickiEmail)){
-        document.getElementById('email-error').innerHTML = " "
+        document.getElementById('email1-error').innerHTML = " ";
     }
     else{
-        document.getElementById('email-error').innerHTML = "** Neispravan E-mail!";
+        document.getElementById('email1-error').innerHTML = "** Neispravan E-mail!";
         return false;
     }
 
     if(brojProvjera.test(korisnickiBroj)){
-        document.getElementById('broj-error').innerHTML = " "
+        document.getElementById('broj1-error').innerHTML = " ";
     }
     else{
-        document.getElementById('broj-error').innerHTML = "** Neispravan broj!";
+        document.getElementById('broj1-error').innerHTML = "** Neispravan broj!";
         return false;
     }
 
-    if(naslovProvjera.test(naslovKorisnika)){
-        document.getElementById('naslov-error').innerHTML = " "
-    }
-    else{
-        document.getElementById('naslov-error').innerHTML = "** Upišite odgovarajući naslov!";
-        return false;
-    }
-
-    if(porukaProvjera.test(porukaKorisnika)){
-        document.getElementById('poruka-error').innerHTML = " "
-    }
-    else{
-        document.getElementById('poruka-error').innerHTML = "** Poruka mora da sadrži odgovarajuće karaktere!";
-        return false;
-    }
     if(lozinkaProvjera.test(lozinkaKorisnika)){
-        document.getElementById('lozinka-error').innerHTML = "** Neispravna lozinka!"
+        document.getElementById('loz1-error').innerHTML = " ";
     }
     else{
-        document.getElementById('lozinka-error').innerHTML = " ";
+        document.getElementById('loz1-error').innerHTML = "** Neispravna lozinka!";
         return false;
     }
 
     if(lozinkaKorisnika.match(potvrdaLozinke)){
-        document.getElementById('lozinka-error').innerHTML = "** Potvrdite lozinku!"
+        document.getElementById('potvrda-loz1-error').innerHTML = " ";
     }
     else{
-        document.getElementById('lozinka-error').innerHTML = " ";
+        document.getElementById('potvrda-loz1-error').innerHTML = "** Potvrdite lozinku!";
         return false;
     }
+
+    document.getElementById('potvrda1').innerHTML = "Poruka je uspješno poslata!";
 }
 
 // - Kartica -
@@ -304,13 +291,13 @@ function validacija(){
     var porukaKorisnika = document.getElementById('poruka').value;
 
     let imeProvjera = /^[A-Za-z. ]{3,30}$/;
-    let emailProvjera = /^[a-z0-9.]{3,}@[a-z]{3,}[.]{1}[a-z.]{2,6}$/
-    let brojProvjera = /^[0]{1}[6]{1}[0-9]{9}$/
+    let emailProvjera = /^[a-z0-9.]{3,}@[a-z]{3,}[.]{1}[a-z.]{2,6}$/;
+    let brojProvjera = /^[0]{1}[6]{1}[0-9]{9}$/;
     let naslovProvjera = /^[A-Za-z0-9 .]{3,40}$/;
     let porukaProvjera = /^[A-Za-z0-9 .,]{3,2000}[.]{1}$/;
 
     if(imeProvjera.test(korisnickoIme)){
-        document.getElementById('ime-error').innerHTML = " "
+        document.getElementById('ime-error').innerHTML = " ";
     }
     else{
         document.getElementById('ime-error').innerHTML = "** Neispravno ime!";
@@ -318,7 +305,7 @@ function validacija(){
     }
     
     if(emailProvjera.test(korisnickiEmail)){
-        document.getElementById('email-error').innerHTML = " "
+        document.getElementById('email-error').innerHTML = " ";
     }
     else{
         document.getElementById('email-error').innerHTML = "** Neispravan E-mail!";
@@ -326,7 +313,7 @@ function validacija(){
     }
 
     if(brojProvjera.test(korisnickiBroj)){
-        document.getElementById('broj-error').innerHTML = " "
+        document.getElementById('broj-error').innerHTML = " ";
     }
     else{
         document.getElementById('broj-error').innerHTML = "** Neispravan broj!";
@@ -334,7 +321,7 @@ function validacija(){
     }
 
     if(naslovProvjera.test(naslovKorisnika)){
-        document.getElementById('naslov-error').innerHTML = " "
+        document.getElementById('naslov-error').innerHTML = " ";
     }
     else{
         document.getElementById('naslov-error').innerHTML = "** Upišite odgovarajući naslov!";
@@ -342,12 +329,14 @@ function validacija(){
     }
 
     if(porukaProvjera.test(porukaKorisnika)){
-        document.getElementById('poruka-error').innerHTML = " "
+        document.getElementById('poruka-error').innerHTML = " ";
     }
     else{
         document.getElementById('poruka-error').innerHTML = "** Poruka mora da sadrži odgovarajuće karaktere!";
         return false;
     }
+
+    document.getElementById('potvrda').innerHTML = "Poruka je uspješno poslata!";
 }
 
 // - Mini Filter galerija -
