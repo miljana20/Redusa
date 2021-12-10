@@ -98,7 +98,6 @@ header .hb-box #hamburgercic:hover {
 
 #navigacija-mala {
   position: fixed;
-  top: 0px;
   left: -100vw;
   background-color: #0d3b23;
   text-align: center;
