@@ -110,33 +110,26 @@ header .hb-box #hamburgercic:hover {
 
 #navigacija-mala {
   position: fixed;
-  left: -100vw;
+  right: -100vw;
   background-color: #0d3b23;
   text-align: center;
   padding: 10px;
   z-index: 1;
-  width: 100vw;
+  width: 50vw;
 }
 
-#navigacija-mala span {
+#navigacija-mala.aktiviraj {
+  right: 0px;
+}
+
+#navigacija-mala li a {
   color: #ffe07a;
   -webkit-transition: 1s;
   transition: 1s;
 }
 
-#navigacija-mala span:hover {
+#navigacija-mala li a:hover {
   color: #ffffff;
-  -webkit-transition: 1s;
-  transition: 1s;
-}
-
-#navigacija-mala.aktiviraj {
-  left: 0px;
-}
-
-#navigacija-mala .close-btn {
-  width: 10px;
-  height: 10px;
 }
 
 .logo h1 {
