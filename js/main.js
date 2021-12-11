@@ -260,9 +260,12 @@ function validacija1(){
         document.getElementById('potvrda-loz1-error').innerHTML = "** Potvrdite lozinku!";
         return false;
     }
-
-    document.getElementById('potvrda1').innerHTML = "Poruka je uspješno poslata!";
 }
+
+document.getElementById('posalji1').addEventListener('click', function(){
+    let tn = document.createTextNode("Vaša poruka je uspješno poslata");
+    document.querySelector('#potvrda1').append(tn);
+});
 
 // - Kartica -
 document.querySelector('#a').addEventListener('click', function(){
@@ -335,9 +338,12 @@ function validacija(){
         document.getElementById('poruka-error').innerHTML = "** Poruka mora da sadrži odgovarajuće karaktere!";
         return false;
     }
-
-    document.getElementById('potvrda').innerHTML = "Poruka je uspješno poslata!";
 }
+
+document.getElementById('posalji').addEventListener('click', function(){
+    let tn = document.createTextNode("Vaša poruka je uspješno poslata");
+    document.querySelector('#potvrda').append(tn);
+});
 
 // - Mini Filter galerija -
 $(document).ready(function(){
