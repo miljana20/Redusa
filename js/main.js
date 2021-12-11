@@ -222,13 +222,13 @@ function validacija1(){
     let lozinkaProvjera = /^(?=.*[0*9])(?=.*[!@#$%&/*])[a-zA-Z0-9!@#$%&/*]{8,16}$/;
 
     if(imeProvjera.test(korisnickoIme)){
-        document.getElementById('ime1-error').innerHTML = " ";
-        return false;
+    document.getElementById('ime1-error').innerHTML = " ";
     }
     else{
         document.getElementById('ime1-error').innerHTML = "** Neispravno ime!";
+        return false;
     }
-    
+
     if(emailProvjera.test(korisnickiEmail)){
         document.getElementById('email1-error').innerHTML = " ";
     }
@@ -243,7 +243,7 @@ function validacija1(){
     else{
         document.getElementById('broj1-error').innerHTML = "** Neispravan broj!";
         return false;
-    }
+}
 
     if(lozinkaProvjera.test(lozinkaKorisnika)){
         document.getElementById('loz1-error').innerHTML = " ";
