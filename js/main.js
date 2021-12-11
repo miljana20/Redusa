@@ -262,10 +262,10 @@ function validacija1(){
     }
 }
 
-document.getElementById('posalji1').addEventListener('click', function(){
+/*document.getElementById('posalji1').addEventListener('click', function(){
     let tn = document.createTextNode("Vaša poruka je uspješno poslata");
     document.querySelector('#potvrda1').append(tn);
-});
+});*/
 
 // - Kartica -
 document.querySelector('#a').addEventListener('click', function(){
@@ -340,10 +340,10 @@ function validacija(){
     }
 }
 
-document.getElementById('posalji').addEventListener('click', function(){
+/*document.getElementById('posalji').addEventListener('click', function(){
     let tn = document.createTextNode("Vaša poruka je uspješno poslata");
     document.querySelector('#potvrda').append(tn);
-});
+});*/
 
 // - Mini Filter galerija -
 $(document).ready(function(){
@@ -353,8 +353,6 @@ $(document).ready(function(){
         $('.slajd').filter('.'+value).show('1000');
     })
 })
-
-// - Kartice za prijavu -
 
 // - Statistika -
 function statistika(){
