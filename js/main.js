@@ -409,7 +409,7 @@ function statistika(){
 
             if(broj<target){
                 brojac.innerText = broj + inkrement;
-                setTimeout(ciklus, 1)
+                setTimeout(ciklus, 50)
             }
             else{
                 broj.innerText = target;
