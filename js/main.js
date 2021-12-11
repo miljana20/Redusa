@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 })
 
 // - Navigacija - 
-function navigacija(){
+window.addEventListener("DOMContentLoaded", ()=>{
 
     const navigacioniMeni = document.querySelector('#nav');
 
@@ -97,7 +97,7 @@ function navigacija(){
     document.querySelector('main').addEventListener('click', function(){
         document.querySelector('#navigacija-mala').classList.remove('aktiviraj');
     });
-}
+});
 
 // - Galerija -
 let slikeIzGalerije = document.querySelectorAll(".galerija");
@@ -426,6 +426,8 @@ function statistika(){
 
 }
 
+window.addEventListener("DOMContentLoaded", statistika());
+
 // - Slajder utisaka -
 function utisci(){
 
@@ -476,3 +478,4 @@ function utisci(){
     }
     window.onload = textSlajder();
 }
+window.addEventListener("DOMContentLoaded", utisci());
