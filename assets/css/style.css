@@ -569,10 +569,10 @@ footer p {
 
 @media screen and (max-width: 1010px) {
   .nazad-dugme {
-    top: 90vh;
+    top: 80vh;
   }
   .naprijed-dugme {
-    top: 90vh;
+    top: 80vh;
   }
 }
 
