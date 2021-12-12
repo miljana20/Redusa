@@ -354,6 +354,61 @@ $(document).ready(function(){
     })
 })
 
+// - Donamički ispis sadržaja -
+function info(){
+    const inf = document.querySelector('#informacije');
+
+    const infr = [
+        'fa-hourglass-half',
+        'fa-user-graduate',
+        'fa-mountain',
+        'fa-camera'
+    ]
+
+    const nsalov = [
+        'Dugogodišnje iskustvo', 
+        'Stručnost vodiča',
+        'Mnoštvo ponuda',
+        'Avantura za pamćenje'
+    ]
+
+    const tekst = [
+        'Pružamo nezaboravne avanture dugi niz godina.',
+        'Grupe predvode isključivo edukovan stručni kadar.',
+        'Nudimo Vam pregršt maršuta za pješačenje.',
+        'Bićete bogatiji za jedno nezaboravno iskustvo.'
+    ]
+
+    for(let i = 0; i < tekst.length; i++ ){
+        let col = document.createElement('div');
+        let row = document.createElement('div');
+        let col1 = document.createElement('div');
+        let icon = document.createElement('i');
+        let col2 = document.createElement('div');
+        let h = document.createElement('h4');
+        let p = document.createElement('p');
+        col.classList.add('col-12','col-sm-6');
+        row.classList.add('row','mb-2');
+        col1.classList.add('col-4','b-color','text-center');
+        col2.classList.add('col');
+        icon.classList.add('fas',infr[i],'mt-4','icon');
+        h.classList.add('b-color');
+        let ispisN = document.createTextNode(nsalov[i]);
+        let ispisT = document.createTextNode(tekst[i]);
+        p.append(ispisT);
+        h.append(ispisN);
+        col2.append(h);
+        col2.append(p);
+        col1.append(icon);
+        row.append(col1);
+        row.append(col2);
+        col.append(row);
+        inf.append(col);
+    }
+}
+
+window.addEventListener("DOMContentLoaded", info());
+
 // - Statistika -
 function statistika(){
     const statist = document.querySelector('#brojke');
