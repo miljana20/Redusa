@@ -197,9 +197,13 @@ function promijeniSliku(smijer) {
 }
 
 //- Forma u kartici -
-
+//<span id="potvrda-loz1-error" class="text-danger font-weight-bold"></span>
 //dinamička padajuća lista
 var nizBrojLjudi = new Array("1","2","3","4","5");
+
+var tagSpan = document.createElement("span");
+tagSpan.setAttribute("id", "lista-error");
+tagSpan.setAttribute("class", "text-danger font-weight-bold");
 
 var tagSelect = document.createElement("select");
 tagSelect.setAttribute("id", "ddl-brljudi");
@@ -223,6 +227,7 @@ for(let i = 0; i < nizBrojLjudi.length; i++){
 }
 
 document.querySelector("#padajuca-lista").appendChild(tagSelect);
+document.querySelector("#padajuca-lista").appendChild(tagSpan);
 
 // - Validacija forme za prijavu -
 function validacija1(){
@@ -232,6 +237,7 @@ function validacija1(){
     var korisnickiBroj = document.getElementById('broj1').value;
     var lozinkaKorisnika = document.getElementById('lozinka1').value;
     var potvrdaLozinke = document.getElementById('potvrda-lozinke1').value;
+    var ddLista = document.getElementById('ddl-brljudi');
 
     let imeProvjera = /^[A-Za-z. ]{3,30}$/;
     let emailProvjera = /^[a-z0-9.]{3,}@[a-z]{3,}[.]{1}[a-z.]{2,6}$/;
@@ -272,11 +278,20 @@ function validacija1(){
 
     if(lozinkaKorisnika.match(potvrdaLozinke)){
         document.getElementById('potvrda-loz1-error').innerHTML = " ";
-        alert("Vaša poruka je poslata!");
     }
     else{
         document.getElementById('potvrda-loz1-error').innerHTML = "** Potvrdite lozinku!";
         return false;
+    }
+    for(let i=0; i<ddLista.options.length; i++){
+        if(ddLista.options[i].selected === false){
+            document.getElementById('lista-error').innerHTML = " ";
+            alert("Vaša poruka je poslata!");
+        }
+        else if(ddLista.options[i].selected !== false){
+            document.getElementById('lista-error').innerHTML = "** Odaberite broj rezervacija!";
+            return false;
+        }
     }
 }
 
