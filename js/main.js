@@ -99,6 +99,23 @@ window.addEventListener("DOMContentLoaded", ()=>{
     });
 });
 
+// - Dinamička sugestija -
+let t=0;
+let text ="Planinarite sa nama...  ";
+function sugestija(){
+    if(t<text.length){
+        document.getElementById("dinamicki-ispis").innerHTML += text.charAt(t);
+        t++;
+        setTimeout(sugestija,300);
+        if(t==text.length){
+            document.getElementById("dinamicki-ispis").style.textDecoration="underline";
+        }
+    }
+}
+setTimeout (function (){
+    sugestija();
+    }, 3700)
+
 // - Galerija -
 let slikeIzGalerije = document.querySelectorAll(".galerija");
 let najskorijeOtvorena;
@@ -354,7 +371,7 @@ $(document).ready(function(){
     })
 })
 
-// - Donamički ispis sadržaja -
+// - Donamički ispis informacija -
 function info(){
     const inf = document.querySelector('#informacije');
 
