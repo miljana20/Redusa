@@ -197,8 +197,8 @@ function promijeniSliku(smijer) {
 }
 
 //- Forma u kartici -
-//<span id="potvrda-loz1-error" class="text-danger font-weight-bold"></span>
-//dinamička padajuća lista
+
+// - Dinamička padajuća lista -
 var nizBrojLjudi = new Array("1","2","3","4","5");
 
 var tagSpan = document.createElement("span");
