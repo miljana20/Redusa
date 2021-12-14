@@ -272,17 +272,13 @@ function validacija1(){
 
     if(lozinkaKorisnika.match(potvrdaLozinke)){
         document.getElementById('potvrda-loz1-error').innerHTML = " ";
+        alert("Vaša poruka je poslata!");
     }
     else{
         document.getElementById('potvrda-loz1-error').innerHTML = "** Potvrdite lozinku!";
         return false;
     }
 }
-
-/*document.getElementById('posalji1').addEventListener('click', function(){
-    let tn = document.createTextNode("Vaša poruka je uspješno poslata");
-    document.querySelector('#potvrda1').append(tn);
-});*/
 
 // - Kartica -
 document.querySelector('#a').addEventListener('click', function(){
@@ -350,17 +346,13 @@ function validacija(){
 
     if(porukaProvjera.test(porukaKorisnika)){
         document.getElementById('poruka-error').innerHTML = " ";
+        alert("Vaša poruka je poslata!");
     }
     else{
         document.getElementById('poruka-error').innerHTML = "** Poruka mora da sadrži odgovarajuće karaktere!";
         return false;
     }
 }
-
-/*document.getElementById('posalji').addEventListener('click', function(){
-    let tn = document.createTextNode("Vaša poruka je uspješno poslata");
-    document.querySelector('#potvrda').append(tn);
-});*/
 
 // - Mini Filter galerija -
 $(document).ready(function(){
