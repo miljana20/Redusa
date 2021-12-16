@@ -325,7 +325,7 @@ function validacija(){
     let emailProvjera = /^[a-z0-9.]{3,}@[a-z]{3,}[.]{1}[a-z.]{2,6}$/;
     let brojProvjera = /^[0]{1}[6]{1}[0-9]{9}$/;
     let naslovProvjera = /^[A-Za-z0-9 .]{3,40}$/;
-    let porukaProvjera = /^[A-Za-z0-9 .,]{3,2000}[.]{1}$/;
+    let porukaProvjera = /^[A-Za-z0-9 .,]{3,2000}[.!?]{1}$/;
 
     if(imeProvjera.test(korisnickoIme)){
         document.getElementById('ime-error').innerHTML = " ";
